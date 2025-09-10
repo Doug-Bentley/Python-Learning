@@ -52,3 +52,28 @@
 #     else:
 #         move()
 
+# Unknown height
+def turn_right():
+    for turn in range(3):
+        turn_left()
+
+
+def jump_hurdle():
+    count = 0
+    turn_left()
+    while wall_on_right():
+        move()
+        count += count
+    turn_right()
+    move()
+    turn_right()
+    for move in range(count):
+        move()
+    turn_left()
+
+
+while not at_goal():
+    if wall_in_front():
+        jump_hurdle()
+    else:
+        move()
